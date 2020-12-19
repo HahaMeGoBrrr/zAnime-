@@ -201,7 +201,7 @@ async def unban(ctx, *, member):
 @client.command()
 async def first_bot(ctx):
     member_role = ctx.guild.get_role(777070474718740490)
-        if (member_role in ctx.author):
+        if (member_role in ctx.author.mention):
         time.sleep(3)
         await ctx.send('how did you know about it???')
         time.sleep(3)
