@@ -93,19 +93,13 @@ async def whois(ctx,member : discord.Member):
 @commands.has_permissions(kick_members = True)
 async def mute(ctx, member : discord.Member):
     muted_role = ctx.guild.get_role(789163084735316079)
-    baby_mod = ctx.guild.get_role(787705710615461938)
-    baby_baby_mod = ctx.guild.get_role(789477457484840981)
-    bot_role = ctx.guild.get_role(777070475435704330)
+
 
     await member.add_roles(muted_role)
 
     await ctx.send(member.mention + f" was muted by {ctx.author.mention}")
-    if member.mention.has_role(baby_mod):
-        await ctx.send('You can not mute a mod -_-')
-    elif member.mention.has_role(baby_baby_mod):
-        await ctx.send('You can not mute a mod -_-')
-    elif member.mention.has_role(bot_role):
-        await ctx.send('to mute a bot, remove the bot role -_-')
+    if member.mention.has_permissions(kick_members=True):
+        await ctx.send('you can not mute a mod')
 
 @client.command()
 @commands.has_permissions(kick_members = True)
