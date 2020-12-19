@@ -17,7 +17,7 @@ async def on_ready():
 @client.group(invoke_without_command = True)
 async def help(ctx):
     embed = discord.Embed(title = 'help', description = 'use a!help (command name) for more info on them')
-    embed.add_field(name='non-admin commands', value='a!zoro\na!hisoka\na!kakashi\na!senku\na!speed_check', inline=False)
+    embed.add_field(name='non-admin commands', value='a!zoro\na!hisoka\na!kakashi\na!senku\na!help\na!speed_check', inline=False)
     embed.add_field(name="user-info-commands", value='a!whois', inline=False)
     embed.add_field(name='admin commads', value='a!ban\na!kick\na!unban\na!clear\na!mute\na!unmute', inline=False)
     embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/777070524588359741/789491406233141308/IMG_20201218_194627.png')
