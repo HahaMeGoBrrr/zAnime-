@@ -1,3 +1,4 @@
+import discord
 from discord.ext import commands
 import random
 import time
@@ -197,9 +198,9 @@ async def unban(ctx, *, member):
 @commands.has_permissions(kick_members=True)
 async def first_bot(ctx):
     time.sleep(3)
-    await ctx.send('how did you know about it???')
+    await ctx.send('||how did you know about it???||')
     time.sleep(3)
-    await ctx.send('i do not have the function to check if anyone said anything or not\nbut let me tell you this\nInspirational bot was the first bot my creator made\nthe bot that gave me birth\ndig for more secrets you have proven your self worth by using this command.')
+    await ctx.send('||i do not have the function to check if anyone said anything or not\nbut let me tell you this\nInspirational bot was the first bot my creator made\nthe bot that gave me birth\ndig for more secrets you have proven your self worth by using this command.||')
     time.sleep(5)
     await ctx.channel.purge(limit=3)
     return
