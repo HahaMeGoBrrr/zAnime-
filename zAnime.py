@@ -16,8 +16,8 @@ async def on_ready():
 
 @client.group(invoke_without_command = True)
 async def help(ctx):
-    embed = discord.Embed(title = 'help', description = 'use a!help (command name) for more info on them')
-    embed.add_field(name='non-admin commands', value='a!zoro\na!hisoka\na!kakashi\na!senku\na!help\na!speed_check', inline=False)
+    embed = discord.Embed(title = 'a!help', description = 'use a!help (command name) for more info on them')
+    embed.add_field(name='non-admin commands', value='a!zoro\na!hisoka\na!kakashi\na!senku\na!speed_check', inline=False)
     embed.add_field(name="user-info-commands", value='a!whois', inline=False)
     embed.add_field(name='admin commads', value='a!ban\na!kick\na!unban\na!clear\na!mute\na!unmute', inline=False)
     embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/777070524588359741/789491406233141308/IMG_20201218_194627.png')
@@ -93,22 +93,31 @@ async def whois(ctx,member : discord.Member):
 @commands.has_permissions(kick_members = True)
 async def mute(ctx, member : discord.Member):
     muted_role = ctx.guild.get_role(789163084735316079)
+    baby_mod = ctx.guild.get_role(787705710615461938)
+    baby_baby_mod = ctx.guild.get_role(789477457484840981)
 
+    if (muted_role in member.roles):
+        await ctx.send(f'{ctx.author.mention} member already muted')
+    elif (baby_mod in member.roles):
+        await ctx.send(f'{ctx.author.mention} you can not mute a mod')
+    elif (baby_baby_mod in member.roles):
+        await ctx.send(f'{ctx.author.mention} you can not mute a mod')
+    else:
+        await member.add_roles(muted_role)
 
-    await member.add_roles(muted_role)
-
-    await ctx.send(member.mention + f" was muted by {ctx.author.mention}")
-    if member.mention.has_permissions(kick_members=True):
-        await ctx.send('you can not mute a mod')
+        await ctx.send(f'{member.mention} was muted by {ctx.author.mention}')
 
 @client.command()
 @commands.has_permissions(kick_members = True)
 async def unmute(ctx, member : discord.Member):
     muted_role = ctx.guild.get_role(789163084735316079)
 
-    await member.remove_roles(muted_role)
+    if (muted_role not in member.roles):
+        await ctx.send(f'{ctx.author.mention} user is already unmuted')
+    else:
+        await member.remove_roles(muted_role)
 
-    await ctx.send(member.mention + f" has been unmuted by {ctx.author.name}")
+        await ctx.send(f'{member.mention} was unmuted by {ctx.author.mention}')
 
 @client.command(aliases = ['S'])
 async def senku(ctx):
