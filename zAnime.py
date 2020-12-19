@@ -204,6 +204,8 @@ async def first_bot(ctx):
     await ctx.send('how did you know about it???')
     time.sleep(3)
     await ctx.send('i do not have the function to check if anyone said anything or not\nbut let me tell you this\nInspirational bot was the first bot my creator made\nthe bot that gave me birth\ndig for more secrets you have proven your self worth by using this command.')
+    await ctx.purge(limit=2)
     return
+
 
 client.run(os.environ['token'])
