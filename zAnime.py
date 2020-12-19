@@ -82,7 +82,6 @@ async def senku(ctx):
 #    ))
 #    print("Bot is ready.")
 @client.command()
-@commands.has_permissions(send_messages=True)
 async def whois(ctx,member : discord.Member):
     embed = discord.Embed(title = member.name, description = f'@{member.name}')
     embed.add_field(name = "ID", value = member.id)
@@ -124,14 +123,12 @@ async def unmute(ctx, member : discord.Member):
         await ctx.send(f'{member.mention} was unmuted by @{ctx.author.name}')
 
 @client.command(aliases = ['S'])
-@commands.has_permissions(send_messages=True)
 async def senku(ctx):
     await ctx.send('Here Ishigami Senku -_-')
     senku_gif = ['https://tenor.com/view/starstrails-shatito-shatito-producciones-pae-pabloc-gif-19477723','https://tenor.com/view/starstrails-shatito-shatito-producciones-pae-nachobkn-gif-19477888','https://tenor.com/view/starstrails-shatito-shatito-producciones-pae-nachobkn-gif-19477891','https://tenor.com/view/starstrails-shatito-shatito-producciones-pae-nachobkn-gif-19477891','https://tenor.com/view/franco-ddlj-franco-luizdoro-dr-stone-senku-gif-19064538','https://tenor.com/view/starstrails-shatito-shatito-producciones-pae-nachobkn-gif-19477479','https://tenor.com/view/starstrails-shatito-shatito-producciones-pae-nachobkn-gif-19477884','https://tenor.com/view/starstrails-shatito-shatito-producciones-pae-nachobkn-gif-19477478','https://tenor.com/view/dr-stone-senku-angry-gif-14601021','https://tenor.com/view/senku-ishigami-chrome-magma-cringy-dr-stone-gif-15698675','https://tenor.com/view/dr-stone-chibi-senku-ishigami-anime-boy-shooting-star-gif-15800596','https://tenor.com/view/franco-franco-ddlj-luizdoro-senku-ishigami-senku-gif-19022652','https://tenor.com/view/senku-dr-stone-senku-ishigami-luizdoro-gif-19022306','https://tenor.com/view/senku-dr-stone-senku-ishigami-franco-franco-ddlj-gif-19022681','https://tenor.com/view/senku-dr-stone-senku-ishigami-luizdoro-gif-19022313','https://tenor.com/view/dr-stone-senku-anime-hot-stare-gif-19437590','https://tenor.com/view/dr-stone-rainbow-barf-hold-magma-chrome-gif-15698655','https://tenor.com/view/dr-stone-senku-anime-smirk-smile-gif-19437591','https://tenor.com/view/senku-dr-stone-electricity-power-shock-lightning-gif-15566774','https://tenor.com/view/anime-dr-stone-senku-science-math-gif-14797363','https://tenor.com/view/senku-dr-stone-anime-smile-gif-16993458']
     await ctx.send('Enjoy!!!')
     await ctx.send(random.choice(senku_gif))
 @client.command(aliases = ['H'])
-@commands.has_permissions(send_messages=True)
 async def hisoka(ctx):
     await ctx.send('Here Hisoka Morow -_-')
     hisoka_gif = ['https://tenor.com/view/hisoka-hxh-hunter-x-hunter-anime-hair-down-gif-17560875','https://tenor.com/view/hisoka-ok-gif-13721467','https://tenor.com/view/hisoka-hunter-x-hunter-hxh-anime-aura-gif-17602951','https://tenor.com/view/hxh-hisoka-hunter-x-hunter-anime-joker-gif-16816643','https://tenor.com/view/hisoka-hunter-x-hunter-stare-gif-8680716','https://tenor.com/view/hisoka-hunter-x-hunter-gif-13721470','https://tenor.com/view/kurocass-gif-9350671','https://tenor.com/view/hisoka-gif-14143763','https://tenor.com/view/hisoka-happy-hisoka-vs-gon-hxh-hunter-x-hunter-gif-16556305','https://tenor.com/view/hisoka-gon-hunterxhunter-gif-6164327','https://tenor.com/view/hisoka-hisoka-morow-hisoka-hxh-hxh-hunter-x-hunter-gif-16052660','https://tenor.com/view/loveyou-love-you-hisoka-heart-gif-5511432','https://tenor.com/view/hisoka-hunter-smug-hxh-gif-4749197','https://tenor.com/view/hisoka-hxh-hunterxhunter-gif-5292003','https://tenor.com/view/hisoka-gif-12748963','https://tenor.com/view/hisoka-hisoka-nen-hisoka-fight-hisoka-greed-island-greed-island-gif-16556405','https://tenor.com/view/hisoka-hunterx-hunter-anime-turn-around-nude-gif-17740689','https://tenor.com/view/anime-hisoka-hunterxhunter-hxh-good-gif-13170154','https://tenor.com/view/hisoka-card-hisoka-hxh-hunter-x-hunter-gif-16052944','https://tenor.com/view/hisoka-hunter-x-hunter-gif-13721472','https://tenor.com/view/hisoka-hunter-x-hunter-gif-13721471','https://tenor.com/view/naked-hisoka-morow-anime-gif-18781477','https://tenor.com/view/im-pretty-shy-quiet-party-gif-5511433','https://tenor.com/view/hisoka-pose-smile-gif-12762415','https://tenor.com/view/straight-face-hunter-x-hunter-gif-13851978','https://tenor.com/view/hisoka-hisoka-morrow-gif-19188120','https://tenor.com/view/hisoka-hunter-x-hunter-stare-gif-8680716','https://tenor.com/view/hisoka-gif-18482106','https://tenor.com/view/hisoka-gif-18482106','https://tenor.com/view/hisoka-hisoka-vs-gon-hisoka-renatoxd-hisoka-hxh-hunter-x-hunter-gif-16052647','https://tenor.com/view/hisoka-hunter-x-hunter-hxh-anime-power-gif-17610829','https://tenor.com/view/hisoka-gif-18677673','https://tenor.com/view/hisoka-hunter-x-hunter-hxh-anime-power-gif-17602949','https://tenor.com/view/morrow-hisoka-hunter-x-hunter-hxh-anime-gif-15981482','https://tenor.com/view/hisoka-hxh-anime-hunterxhunter-gif-5291995','https://tenor.com/view/hunter-x-hunter-hisoka-anime-sourcile-evil-gif-17167208','https://tenor.com/view/hisoka-hxh-hunter-x-hunter-smile-smirk-gif-17610823','https://tenor.com/view/hisoka-hunter-x-hunter-gif-15773404','https://tenor.com/view/that-is-my-target-hunter-x-hunter-hisoka-hisoka1999-gif-15313850','https://tenor.com/view/hisoka-hunter-x-hunter-gif-13721469','https://tenor.com/view/hisoka-dancing-hxh-hunterxhunter-anime-gif-5755399'] 
@@ -139,7 +136,6 @@ async def hisoka(ctx):
     await ctx.send(random.choice(hisoka_gif))
 
 @client.command(aliases = ['K'])
-@commands.has_permissions(send_messages=True)
 async def kakashi(ctx):
     await ctx.send('Here Kakashi -_-')
     kakashi_gif = ['https://tenor.com/view/kakashi-gif-5228544','https://tenor.com/view/thumbsup-approve-kakashi-naruto-gif-8212733','https://tenor.com/view/naruto-hi-hello-kakashi-wave-gif-4890052','https://tenor.com/view/kakashi-naruto-gif-4978618','https://tenor.com/view/kakashi-hatake-lol-gif-13599150','https://tenor.com/view/kakashi-hatake-naruto-smile-mask-anime-gif-17707743','https://tenor.com/view/idk-kakashi-naruto-kids-gif-14039609','https://tenor.com/view/naruto-gif-7918603','https://tenor.com/view/kakashi-kakashi-hatake-chidori-lightening-lightening-blade-gif-5373413','https://tenor.com/view/kakashi-hatake-gif-11594732', 'https://tenor.com/view/kakashi-hatake-face-palm-naruto-gif-11602503','https://tenor.com/view/naruto-thumbs-up-approve-approval-yup-gif-7943827','https://tenor.com/view/kakakshi-kakashi-hatake-kakashia-shokage-spinning-in-chair-shikamaru-gif-5373420','https://tenor.com/view/kakashi-naruto-smile-kawaii-anime-gif-4887912','https://tenor.com/view/kakashi-hatake-jutsu-gif-13599266','https://tenor.com/view/kakashi-kakashieating-kakashihatake-naruto-narutoshippuden-gif-5373406','https://tenor.com/view/kakashi-hatake-kid-naruto-gif-5075026','https://tenor.com/view/kakashi-naruto-gif-7249547','https://tenor.com/view/naruto-kakashi-scary-gif-14510702','https://tenor.com/view/kakashi-mangekyou-obito-mangekyou-kakashi-obito-gif-14848309','https://tenor.com/view/kakashi-hatake-gif-11594768','https://tenor.com/view/naruto-kakashi-sneak-observe-look-gif-4887793','https://tenor.com/view/surya-surya-kp-kakashi-sharingan-surya-kakashi-gif-18225507','https://tenor.com/view/kakashi-hatake-funnny-moment-gif-14559744','https://tenor.com/view/naruto-kakashi-shrug-gif-12980424','https://tenor.com/view/kakashi-hatake-deep-sigh-gif-15336876','https://tenor.com/view/hatake-kakashi-kakashi-hatake-naruto-padre-ehijo-gif-18598504',]
@@ -150,7 +146,6 @@ async def kakashi(ctx):
 
 
 @client.command(aliases = ['Z'])
-@commands.has_permissions(send_messages=True)
 async def zoro(ctx):
     await ctx.send('Here Roronoa Zoro -_-')
     zoro_gif = ['https://tenor.com/view/zoro-one-piece-sword-epic-gif-17912030','https://tenor.com/view/one-piece-anime-zoro-laughing-lol-gif-16674515','https://tenor.com/view/zoro-ultimate-gif-18029429','https://tenor.com/view/zoro-fakesmile-gif-18464823','https://tenor.com/view/roronoa-zoro-one-piece-gif-12702248','https://tenor.com/view/lick-sword-zoro-one-piece-kill-gif-4773569','https://tenor.com/view/zoro-one-piece-snore-snoring-bubble-gif-5392221','https://tenor.com/view/luffy-one-piece-anime-dead-evil-gif-5378937','https://tenor.com/view/zoro-roronoa-zoro-laugh-one-piece-zoro-one-piece-gif-11990845','https://tenor.com/view/zoro-haki-one-piece-gif-14591756','https://tenor.com/view/sanji-one-piece-gif-16224246','https://tenor.com/view/one-piece-roronoa-zoro-onsen-hotspring-chill-gif-8968823','https://tenor.com/view/zoro-sleep-sleepy-one-piece-anime-gif-15159533','https://tenor.com/view/zoro-rononora-zoro-one-piece-practice-gif-14578557','https://tenor.com/view/zoro-sword-trick-one-piece-anime-gif-17235716','https://tenor.com/view/zoro-rononora-zoro-one-piece-practice-weightlifting-gif-14578573','https://tenor.com/view/one-piece-zoro-anime-sword-gif-16324555','https://tenor.com/view/zoro-one-piece-straw-hat-one-piece-gif-5376790','https://tenor.com/view/zoro-dragon-twister-one-piece-gif-14591763','https://tenor.com/view/zoro-sword-one-piece-gif-15934323','https://tenor.com/view/zoro-one-piece-straw-hat-one-piece-gif-5376790','','https://tenor.com/view/zoro-sword-one-piece-gif-15934323','https://tenor.com/view/one-piece-zoro-anime-sword-gif-16324555','https://tenor.com/view/luffy-zoro-one-piece-one-piece-gif-5376810','https://tenor.com/view/zoro-one-piece-straw-hat-one-piece-gif-5376793','https://tenor.com/view/one-piece-anime-drinking-force-luffy-gif-16581128','https://tenor.com/view/one-piece-wano-ep934-zoro-three-sword-style-gif-17911583','https://tenor.com/view/zoro-drink-zoro-drink-gif-18448771','https://tenor.com/view/luffy-zoro-friends-friend-one-piece-gif-17241566','https://tenor.com/view/zoro-battle-attack-gif-13850289','https://tenor.com/view/one-piece-sleepy-yawn-zoro-gif-9627780','https://tenor.com/view/anime-one-piece-roronoa-zoro-rage-angry-gif-12305224','https://tenor.com/view/tashigi-zoro-roronoa-zoro-zotash-blush-gif-16270260','https://tenor.com/view/zoro-gif-18444309','https://tenor.com/view/zoro-one-piece-gif-9932573','https://tenor.com/view/zoro-one-piece-gif-8451924','https://tenor.com/view/one-piece-gif-4871398','https://tenor.com/view/zoro-one-piece-wink-smile-anime-gif-17606766']
@@ -159,7 +154,6 @@ async def zoro(ctx):
 
 
 @client.command()
-@commands.has_permissions(send_messages=True)
 async def speed_check(ctx):
     await ctx.send(f'The speed is {round(client.latency * 1000)} miliseconds!!')
 
@@ -205,15 +199,16 @@ async def unban(ctx, *, member):
             return
 
 @client.command()
-@commands.has_permissions(send_messages=True)
 async def first_bot(ctx):
-    time.sleep(3)
-    await ctx.send('how did you know about it???')
-    time.sleep(3)
-    await ctx.send('i do not have the function to check if anyone said anything or not\nbut let me tell you this\nInspirational bot was the first bot my creator made\nthe bot that gave me birth\ndig for more secrets you have proven your self worth by using this command.')
-    time.sleep(5)
-    await ctx.channel.purge(limit=3)
-    return
+    member_role = ctx.guild.get_role(777070474718740490)
+        if (member_role in ctx.author):
+        time.sleep(3)
+        await ctx.send('how did you know about it???')
+        time.sleep(3)
+        await ctx.send('i do not have the function to check if anyone said anything or not\nbut let me tell you this\nInspirational bot was the first bot my creator made\nthe bot that gave me birth\ndig for more secrets you have proven your self worth by using this command.')
+        time.sleep(5)
+        await ctx.channel.purge(limit=3)
+        return
 
 
 client.run(os.environ['token'])
