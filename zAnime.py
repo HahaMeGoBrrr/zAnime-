@@ -198,4 +198,19 @@ async def unban(ctx, *, member):
             await ctx.send(f"unbanned {user.mention}")
             return
 
+@client.command()
+async def first_bot(ctx, reason):
+    time.sleep(3)
+    await ctx.send('how did you know about it???, my first bot, my first start')
+    time.sleep(3)
+    if reason='i know the owner':
+        await ctx.send('oh okay i was thinking you were a hacker lmao')
+        time.sleep(1)
+        await ctx.send('inspirational bot was the first ever bot, it gave birth to me')
+        time.sleep(1)
+        await ctx.send('strange i know i do still feel bad about it')
+    else:
+        await ctx.send('sorry no more info')
+
+
 client.run(os.environ['token'])
