@@ -1,4 +1,3 @@
-import discord
 from discord.ext import commands
 import random
 import time
@@ -95,7 +94,6 @@ async def mute(ctx, member : discord.Member):
     muted_role = ctx.guild.get_role(789163084735316079)
     baby_mod = ctx.guild.get_role(787705710615461938)
     baby_baby_mod = ctx.guild.get_role(789477457484840981)
-    bot = ctx.guild.get_role(777070475435704330)
 
     if (muted_role in member.roles):
         await ctx.send(f'{ctx.author.mention} member already muted')
@@ -103,8 +101,6 @@ async def mute(ctx, member : discord.Member):
         await ctx.send(f'{ctx.author.mention} you can not mute a mod')
     elif (baby_baby_mod in member.roles):
         await ctx.send(f'{ctx.author.mention} you can not mute a mod')
-    elif (bot in member.roles):
-        await ctx.send(f'{ctx.author.mention} remove bot role from account first')
     else:
         await member.add_roles(muted_role)
 
@@ -120,7 +116,7 @@ async def unmute(ctx, member : discord.Member):
     else:
         await member.remove_roles(muted_role)
 
-        await ctx.send(f'{member.mention} was unmuted by @{ctx.author.name}')
+        await ctx.send(f'{member.mention} was unmuted by {ctx.author.mention}')
 
 @client.command(aliases = ['S'])
 async def senku(ctx):
@@ -196,19 +192,17 @@ async def unban(ctx, *, member):
         if (user.name, user.discriminator) == (member_name, member_discriminator):
             await ctx.guild.unban(user)
             await ctx.send(f"unbanned {user.mention}")
-            return
 
 @client.command()
+@commands.has_permissions(kick_members=True)
 async def first_bot(ctx):
-    member_role = ctx.guild.get_role(777070474718740490)
-        if (member_role in ctx.author.mention):
-        time.sleep(3)
-        await ctx.send('how did you know about it???')
-        time.sleep(3)
-        await ctx.send('i do not have the function to check if anyone said anything or not\nbut let me tell you this\nInspirational bot was the first bot my creator made\nthe bot that gave me birth\ndig for more secrets you have proven your self worth by using this command.')
-        time.sleep(5)
-        await ctx.channel.purge(limit=3)
-        return
+    time.sleep(3)
+    await ctx.send('how did you know about it???')
+    time.sleep(3)
+    await ctx.send('i do not have the function to check if anyone said anything or not\nbut let me tell you this\nInspirational bot was the first bot my creator made\nthe bot that gave me birth\ndig for more secrets you have proven your self worth by using this command.')
+    time.sleep(5)
+    await ctx.channel.purge(limit=3)
+    return
 
 
 client.run(os.environ['token'])
