@@ -95,6 +95,7 @@ async def mute(ctx, member : discord.Member):
     muted_role = ctx.guild.get_role(789163084735316079)
     baby_mod = ctx.guild.get_role(787705710615461938)
     baby_baby_mod = ctx.guild.get_role(789477457484840981)
+    bot = ctx.guild.get_role(777070475435704330)
 
     if (muted_role in member.roles):
         await ctx.send(f'{ctx.author.mention} member already muted')
@@ -102,6 +103,8 @@ async def mute(ctx, member : discord.Member):
         await ctx.send(f'{ctx.author.mention} you can not mute a mod')
     elif (baby_baby_mod in member.roles):
         await ctx.send(f'{ctx.author.mention} you can not mute a mod')
+    elif (bot in member.roles):
+        await ctx.send(f'remove `bot` role from {member.mention} to mute the account')
     else:
         await member.add_roles(muted_role)
 
