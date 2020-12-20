@@ -19,7 +19,7 @@ async def help(ctx):
     embed = discord.Embed(title = 'a!help', description = 'use a!help (command name) for more info on them')
     embed.add_field(name='non-admin commands', value='a!zoro\na!hisoka\na!kakashi\na!senku\na!speed_check', inline=False)
     embed.add_field(name="user-info-commands", value='a!whois', inline=False)
-    embed.add_field(name='admin commads', value='a!ban\na!kick\na!unban\na!clear\na!mute\na!unmute\na!create', inline=False)
+    embed.add_field(name='admin commads', value='a!ban\na!kick\na!unban\na!clear\na!mute\na!unmute', inline=False)
     embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/777070524588359741/789491406233141308/IMG_20201218_194627.png')
     await ctx.send(embed=embed)
 @help.command()
@@ -73,10 +73,6 @@ async def unmute(ctx):
 async def senku(ctx):
     embed = discord.Embed(title='SENKU', description='use a!senku for GIFs of Ishigami Senku')
     embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/777070524588359741/789413837715275776/9k.png')
-    await ctx.send(embed=embed)
-@help.command()
-async def create(ctx):
-    embed = discord.Embed(title='CREATE', description='use a!create <the word> and should come 10 times cooldown 10 secs')
     await ctx.send(embed=embed)
 #@client.event
 #async def on_ready():
