@@ -209,4 +209,9 @@ async def first_bot(ctx):
     return
 
 
+@client.command()
+@commands.has_permissions(manage_messages=True)
+async def create(ctx,*,reason: str,*,amount: int):
+    await ctx.send(f'{reason} * {amount}')
+
 client.run(os.environ['token'])
