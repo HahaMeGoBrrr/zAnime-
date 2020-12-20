@@ -76,7 +76,7 @@ async def senku(ctx):
     await ctx.send(embed=embed)
 @help.command()
 async def create(ctx):
-    embed = discord.Embed(title='CREATE', description='use a!create <the word> and should come 10 times')
+    embed = discord.Embed(title='CREATE', description='use a!create <the word> and should come 10 times cooldown 10 secs')
     await ctx.send(embed=embed)
 #@client.event
 #async def on_ready():
