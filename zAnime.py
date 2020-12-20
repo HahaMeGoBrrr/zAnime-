@@ -212,7 +212,19 @@ async def first_bot(ctx):
     await ctx.channel.purge(limit=3)
     return
 
-
+@client.command()
+@commands.has_permissions(manage_messages=True)
+async def create(ctx,*,amount: str):
+    await ctx.send(amount)
+    await ctx.send(amount)
+    await ctx.send(amount)
+    await ctx.send(amount)
+    await ctx.send(amount)
+    await ctx.send(amount)
+    await ctx.send(amount)
+    await ctx.send(amount)
+    await ctx.send(amount)
+    await ctx.send(amount)
 
 
 client.run(os.environ['token'])
