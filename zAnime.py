@@ -76,7 +76,7 @@ async def senku(ctx):
     await ctx.send(embed=embed)
 @help.command()
 async def create(ctx):
-    embed = discord.Embed(title='CREATE', description='use a!create <the word to be created> <the amount of times>')
+    embed = discord.Embed(title='CREATE', description='use a!create <the word> and should come 10 times')
     await ctx.send(embed=embed)
 #@client.event
 #async def on_ready():
@@ -215,16 +215,17 @@ async def first_bot(ctx):
 @client.command()
 @commands.has_permissions(manage_messages=True)
 async def create(ctx,*,amount: str):
-    await ctx.send(amount)
-    await ctx.send(amount)
-    await ctx.send(amount)
-    await ctx.send(amount)
-    await ctx.send(amount)
-    await ctx.send(amount)
-    await ctx.send(amount)
-    await ctx.send(amount)
-    await ctx.send(amount)
-    await ctx.send(amount)
+    if time.sleep(0):
+        await ctx.send(amount)
+        await ctx.send(amount)
+        await ctx.send(amount)
+        await ctx.send(amount)
+        await ctx.send(amount)
+        await ctx.send(amount)
+        await ctx.send(amount)
+        await ctx.send(amount)
+        await ctx.send(amount)
+        await ctx.send(amount)
 
 
 client.run(os.environ['token'])
