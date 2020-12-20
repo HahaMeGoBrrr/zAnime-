@@ -1,5 +1,5 @@
 import discord
-from discord.ext import commands
+from discord.ext import commands, cooldown
 import random
 import time
 import os
@@ -214,6 +214,7 @@ async def first_bot(ctx):
 
 @client.command()
 @commands.has_permissions(manage_messages=True)
+@cooldown(1,10)
 async def create(ctx,*,amount: str):
         await ctx.send(amount)
         await ctx.send(amount)
