@@ -164,7 +164,7 @@ async def clear(ctx, amount: int):
     if amount == amount:
         await ctx.send(f'cleared {amount} msg/msgs')
         time.sleep(3)
-        await ctx.channel.purge(limit=1)
+        await ctx.message.purge(limit=1)
 
 @client.command()
 @commands.has_permissions(ban_members=True)
