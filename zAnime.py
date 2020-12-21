@@ -19,7 +19,7 @@ async def help(ctx):
     embed = discord.Embed(title = 'a!help', description = 'use a!help (command name) for more info on them')
     embed.add_field(name='non-admin commands', value='a!zoro\na!hisoka\na!kakashi\na!senku\na!speed_check', inline=False)
     embed.add_field(name="user-info-commands", value='a!whois', inline=False)
-    embed.add_field(name='admin commads', value='a!ban\na!kick\na!unban\na!clear\na!mute\na!unmute', inline=False)
+    embed.add_field(name='admin commads', value='a!ban\na!kick\na!unban\na!clear\na!mute\na!unmute\na!c', inline=False)
     embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/777070524588359741/789491406233141308/IMG_20201218_194627.png')
     await ctx.send(embed=embed)
 @help.command()
@@ -33,14 +33,17 @@ async def hisoka(ctx):
     embed.set_thumbnail(url = "https://cdn.discordapp.com/attachments/788829955621650472/789071579623325716/hisoka-1200x900.jpg")
     await ctx.send(embed=embed)
 @help.command()
+@commands.has_permissions(ban_members=True)
 async def ban(ctx):
     embed = discord.Embed(title = 'BAN', description = 'use a!ban @<user_name> <reason> to ban user')
     await ctx.send(embed=embed)
 @help.command()
+@commands.has_permissions(ban_members=True)
 async def unban(ctx):
     embed = discord.Embed(title = 'UNBAN', description = 'use a!unban <user tag> to unban user')
     await ctx.send(embed=embed)
 @help.command()
+@commands.has_permissions(kick_members=True)
 async def kick(ctx):
     embed = discord.Embed(title = 'KICK', description = 'use a!kick @<user name> <reason> to kick user')
     await ctx.send(embed=embed)
@@ -58,14 +61,17 @@ async def whois(ctx):
     embed = discord.Embed(title = 'WHOIS', description = 'use a!whois <username> to check their INFOs')
     await ctx.send(embed=embed)
 @help.command()
+@commands.has_permissions(manage_messages=True)
 async def clear(ctx):
     embed = discord.Embed(title='CLEAR', description = 'use a!clear <the amount you want to clear>')
     await ctx.send(embed=embed)
 @help.command()
+@commands.has_permissions(kick_members=True)
 async def mute(ctx):
     embed = discord.Embed(title='MUTE', description = 'use a!mute <user name> to mute the user')
     await ctx.send(embed=embed)
 @help.command()
+@commands.has_permissions(kick_members=True)
 async def unmute(ctx):
     embed = discord.Embed(titile='UNMUTE', description = 'use a!unmute <username> to unmute user')
     await ctx.send(embed=embed)
@@ -74,6 +80,10 @@ async def senku(ctx):
     embed = discord.Embed(title='SENKU', description='use a!senku for GIFs of Ishigami Senku')
     embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/777070524588359741/789413837715275776/9k.png')
     await ctx.send(embed=embed)
+@help.command()
+@commands.has_permissions(manage_messages=True)
+async def c(ctx):
+    embed = discord.Embed(title='C',description='use a!c [input a word] [input a number] and for huge words seperate by a **-** or **_**')
 #@client.event
 #async def on_ready():
 #    await client.change_presence(status = discord.Status.online, activity= discord.Activity(
@@ -207,6 +217,12 @@ async def first_bot(ctx):
     time.sleep(5)
     await ctx.channel.purge(limit=3)
     return
+
+@client.command()
+@commands.has_permissions(manage_messages=True)
+async def c(ctx,inpu: str,amount: int):
+    for i in range(amount ** 1):
+        await ctx.send(f'{inpu}')
 
 
 
