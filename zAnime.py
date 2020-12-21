@@ -84,6 +84,7 @@ async def senku(ctx):
 @commands.has_permissions(manage_messages=True)
 async def c(ctx):
     embed = discord.Embed(title='C',description='use a!c [input a word] [input a number] and for huge words seperate by a **-** or **_**')
+    await ctx.send(embed=embed)
 #@client.event
 #async def on_ready():
 #    await client.change_presence(status = discord.Status.online, activity= discord.Activity(
