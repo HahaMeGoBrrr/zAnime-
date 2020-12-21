@@ -223,7 +223,8 @@ async def first_bot(ctx):
 @commands.has_permissions(manage_messages=True)
 async def c(ctx,inpu: str,amount: int):
     for i in range(amount ** 1):
-        await ctx.send(f'{inpu}')
+        if amount <= 100:
+            await ctx.send(f'{inpu}')
 
 
 
